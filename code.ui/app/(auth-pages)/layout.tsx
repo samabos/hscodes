@@ -14,7 +14,13 @@ export default async function Layout({
     <div className="flex flex-col flex-1 dark:bg-gray-800 ">
           {/* Navigation */}
           <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="flex gap-4 ml-8 items-center text-xl font-bold text-nowrap"> <Link href={"/"}>hs.codes</Link> </div>
+          <div className="flex gap-2 ml-8 items-center text-xl font-bold whitespace-nowrap">
+              <Link href={"/"} className="flex items-center">
+                  <img src="/images/large-logo.svg" className="w-10" alt="logo" />
+                  <span className="ml-2">hs.codes</span>
+              </Link>
+          </div>
+
             <div className="w-full flex justify-between items-center p-3 px-5 text-sm">
               <div className="flex gap-5 items-center font-semibold">
                 {/* Add global navigation items here */}
@@ -24,22 +30,21 @@ export default async function Layout({
           </nav>
           {/* Main content */}
           <main className="flex-1 w-full h-full">
-            <div className="flex flex-col h-full justify-center items-center px-4 py-8">
+            <div className="flex flex-col h-full justify-center items-center">
                 {children}
             </div>
         </main>
     </div>
       {/* Footer */}
-      <footer className="dark:bg-gray-800 w-full flex items-center justify-center border-t text-center text-xs gap-8 py-4">
+      <footer className="dark:bg-gray-800 w-full flex items-center justify-center border-t text-center text-xs gap-8 py-4 border-t border-t-foreground/10 h-16">
                 <p>
                   Powered by{" "}
                   <a
-                    href="https://github.com/samabos"
-                    target="_blank"
+                    href={"/"}
                     className="font-bold hover:underline"
                     rel="noreferrer"
                   >
-                    mabos
+                    hs.codes
                   </a>
                 </p>
                 <ThemeSwitcher />

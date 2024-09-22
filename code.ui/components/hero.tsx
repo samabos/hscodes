@@ -1,34 +1,51 @@
 
 import Link from 'next/link';
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-  <div className="my-8 text-center">
-    <div className="mb-6">
-      <img src="/images/large-logo.svg" className="mx-auto mb-4" alt="logo" />
+  <div className="my-4 text-center">
+    <div className="">
       <p className="AutumnHomeText text-xl font-medium">
-        Harmonized Commodity Codes and Tariff Classification
+        Harmonized Commodity Codes Product Classification
       </p>
     </div>
   
     <div className="grid grid-cols-2 gap-8 items-center">
-      <div className="text-center">
-        <Link href="/classification">
-          <img src="/images/classification.svg" className="mx-auto" alt="Classification" />
-        </Link>
-        <button className="mt-4 py-2 px-6 bg-gray-200 text-gray-800 rounded-md shadow">
-          Product Classification
-        </button>
-      </div>
-      <div className="text-center">
-        <Link href="/duty-calculator">
-          <img src="/images/calculator.svg" className="mx-auto" alt="Calculator" />
-        </Link>
-        <button className="mt-4 py-2 px-6 bg-gray-200 text-gray-800 rounded-md shadow">
-          Duty Calculator
-        </button>
-      </div>
-    </div>
+  <div className="text-center">
+    <Link href="/classification">
+      <img 
+        src="/images/classification.svg" 
+        className="mx-auto w-80 transition-transform duration-300 ease-in-out hover:scale-105" 
+        alt="Classification" 
+      />
+    </Link>
+    
+   {/*  <Button
+      size="lg"
+      variant={"outline"}
+      className="py-2 px-6">
+      <Link href="/classification">Product Classification</Link>
+    </Button> */}
+  </div>
+
+  <div className="text-center">
+    <Link href="/">
+      <img 
+        src="/images/calculator.svg" 
+        className="mx-auto w-80 transition-transform duration-300 ease-in-out hover:scale-105" 
+        alt="Calculator" 
+      />
+    </Link>
+    
+    {/* <Button
+      size="lg"
+      variant={"outline"}
+      className="py-2 px-6">
+      <Link href="/duty-calculator">Duty Calculator</Link>
+    </Button> */}
+  </div>
+</div>
   </div>
   
   );
