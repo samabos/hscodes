@@ -61,7 +61,7 @@ const ImportComponent: React.FC = () => {
   };
 
   return (
-  <div className="p-4 bg-white dark:bg-gray-800 rounded-lg min-w-full">
+  <div className="p-8 bg-white dark:bg-gray-800 rounded-lg min-w-full">
     <h3 className="text-center text-2xl font-bold mt-4 text-gray-800 dark:text-gray-200">
       PRODUCT CLASSIFICATION
     </h3>
