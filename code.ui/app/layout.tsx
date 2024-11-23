@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "next-themes";
-import Link from "next/link";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -38,6 +38,7 @@ export default function RootLayout({
             
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-BR7V86VH3T" />
     </html>
   );
 }
