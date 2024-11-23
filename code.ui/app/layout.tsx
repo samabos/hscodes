@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "next-themes";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script'
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -38,7 +38,14 @@ export default function RootLayout({
             
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-BR7V86VH3T" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BR7V86VH3T"></script>
+      <script>
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BR7V86VH3T');`}
+      </script>
     </html>
   );
 }
