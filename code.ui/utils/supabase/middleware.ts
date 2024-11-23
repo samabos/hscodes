@@ -48,6 +48,11 @@ export const updateSession = async (request: NextRequest) => {
       return NextResponse.redirect(new URL("/home", request.url));
     }
 
+    if (request.nextUrl.pathname === request.nextUrl.pathname.toLowerCase()){
+        return response;
+    }else{
+        response = NextResponse.redirect(new URL(request.nextUrl.origin + request.nextUrl.pathname.toLowerCase()));
+    }
     return response;
   } catch (e) {
     // If you are here, a Supabase client could not be created!
