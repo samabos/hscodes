@@ -1,17 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { useParams } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-export default function ArtefactsPage({ params }: { params: { id: string } }) {
+export default function ArtefactsPage(props: { params: Promise<{ id: string }> }) {
+  const params = use(props.params);
   const supabase = createClient();
   const { id } = params;
 
-  
+
 
   const [projectName, setProjectName] = useState<string | null>(null);
   const [projectSector, setProjectSector] = useState<string | null>(null);
