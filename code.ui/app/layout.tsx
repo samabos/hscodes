@@ -46,6 +46,7 @@ export default function RootLayout({
 
         gtag('config', 'G-BR7V86VH3T');`}
       </script>
+      <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="5ee4f7b5-f87c-4850-bfe8-fe5526c8e689" type="text/javascript" async></script>
     </html>
   );
 }
